@@ -1,6 +1,19 @@
+midascore:
+  topic: incoming-transactions
+
 spring:
   kafka:
     bootstrap-servers: "localhost:9092"
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
     consumer:
-      group-id: "myGroup"
-    topic: transactions-topic
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring:
+          json:
+            value:
+              default:
+                type: com.jpmc.midascore.foundation.Transaction
+    topic: ${spring.kafka.topic}
