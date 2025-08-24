@@ -37,6 +37,9 @@ public class TransactionService {
 
         updateBalances(sender, recipient, transaction.getAmount());
 
+        UserRecord waldorf = userRepository.findByName("waldorf");
+        System.out.println("waldorf: " + (int) Math.floor(waldorf.getBalance()));
+
         return true;
 
     }
@@ -47,6 +50,7 @@ public class TransactionService {
         userRepository.save(sender);
         userRepository.save(recipient);
     }
+
     public void recordTransaction(UserRecord sender, UserRecord recipient, float amount) {
         TransactionRecord record = new TransactionRecord(sender, recipient, amount);
         transactionRecordRepository.save(record);

@@ -43,6 +43,8 @@ public class Transaction {
 
     @Override
     public String toString() {
-        return "Transaction {senderId=" + senderId + ", recipientId=" + recipientId + ", amount=" + amount + "}";
+        return "Transaction {senderId=" + senderId + "," +
+                " recipientId=" + recipientId + "," +
+                " amount=" + amount +  "}";
     }
 }
