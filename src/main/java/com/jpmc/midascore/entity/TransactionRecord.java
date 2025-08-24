@@ -20,12 +20,16 @@ public class TransactionRecord {
     @Column(nullable = false)
     private float amount;
 
+    @Column(nullable = false)
+    private float incentive;
+
     protected TransactionRecord() {}
 
-    public TransactionRecord(UserRecord sender, UserRecord recipient, float amount) {
+    public TransactionRecord(UserRecord sender, UserRecord recipient, float amount, float incentive) {
         this.sender = sender;
         this.recipient = recipient;
         this.amount = amount;
+        this.incentive = incentive;
     }
 
     @Override
@@ -47,6 +51,12 @@ public class TransactionRecord {
 
     public void setAmount(float amount) {
         this.amount = amount;
+    }
+
+    public float getIncentive() { return this.incentive; }
+
+    public void setIncentive(float incentive) {
+        this.incentive = incentive;
     }
 
 }
