@@ -29,3 +29,6 @@ spring:
 
 general:
   kafka-topic: transactions-topic
+
+server:
+  port: 33400

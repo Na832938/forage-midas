@@ -1,9 +1,8 @@
-package com.jpmc.midascore;
+package com.jpmc.midascore.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Component;
-import com.jpmc.midascore.service.TransactionService;
 
 import com.jpmc.midascore.foundation.Transaction;
 
